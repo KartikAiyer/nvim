@@ -35,6 +35,7 @@ return {
 		keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Fuzzy find in help tags" })
 		keymap.set("n", "<leader>fv", builtin.git_files, { desc = "Fuzzy find in git files" })
 		keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find recently opened files" })
-		keymap.set("n", "<leader>*", "<cwd>Telescope grep_string<CR>", { desc = "Grep string under cursor in cwd" })
+		keymap.set("n", "<leader>*", "<cmd>Telescope grep_string<CR>", { desc = "Grep string under cursor in cwd" })
+    keymap.set("n", "<leader>fc", "<cmd>Telescope commands<CR>", {desc = "Find commands" })
 	end,
 }
