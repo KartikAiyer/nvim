@@ -1,6 +1,8 @@
-return {
+ return {
   "Civitasv/cmake-tools.nvim",
   dependencies = {"nvim-dap"},
-  config = true
+  opts = {
+    cmake_build_directory = "build/${variant:buildType}",
+  },
 }
 
