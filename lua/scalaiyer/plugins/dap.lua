@@ -58,5 +58,8 @@ return {
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
+    vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", {desc = "Continue Dap. Specify executable if not started"})
+    vim.keymap.set("n", "<leader>do", "<cmd>DapStepOver<CR>", {desc = "Dap Step Over"})
+    vim.keymap.set("n", "<leader>di", "<cmd>DapStepInto<CR>", {desc = "Dap Step Into"})
   end
 }

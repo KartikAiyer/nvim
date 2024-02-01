@@ -65,11 +65,20 @@ return {
 
     lspconfig["clangd"].setup({
       capabilities = capabilities,
-      on_attach = function(client, bufnr) 
+      on_attach = function(client, bufnr)
         client.server_capabilities.signatureHelpProvider = false
+        vim.keymap.set("n", "<leader>th", "<cmd>ClangdSwitchSourceHeader<cr>", { desc = "Switch between source and header" })
+        vim.keymap.set("n", "<leader>tH",
+                  function()
+                    vim.cmd("vsplit")
+                    vim.cmd("ClangdSwitchSourceHeader")
+                  end,
+                  { desc = "Open header or source in separate vsplit" }
+        )
+
         on_attach(client, bufnr)
       end,
-      cmd = {"clangd", "--background-index", "--clang-tidy"}
+      cmd = {"clangd", "--background-index", "--clang-tidy", "--query-driver=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"}
     })
 
     lspconfig["pyright"].setup({
