@@ -78,7 +78,7 @@ return {
 
         on_attach(client, bufnr)
       end,
-      cmd = {"clangd", "--log=verbose", "--background-index", "--clang-tidy"}--, "--query-driver=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"}
+      cmd = {"clangd", "--background-index", "--clang-tidy"}
     })
 
     lspconfig["pyright"].setup({
