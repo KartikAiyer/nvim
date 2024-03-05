@@ -62,7 +62,7 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
-
+    vim.lsp.set_log_level("trace")
     lspconfig["clangd"].setup({
       capabilities = capabilities,
       on_attach = function(client, bufnr)
@@ -78,7 +78,7 @@ return {
 
         on_attach(client, bufnr)
       end,
-      cmd = {"clangd", "--background-index", "--clang-tidy", "--query-driver=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"}
+      cmd = {"clangd", "--log=verbose", "--background-index", "--clang-tidy"}--, "--query-driver=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++"}
     })
 
     lspconfig["pyright"].setup({
