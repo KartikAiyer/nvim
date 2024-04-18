@@ -12,7 +12,7 @@ return {
 		prefer_startup_root = false,
 		sync_root_with_cwd = false,
 		reload_on_bufenter = false,
-		respect_buf_cwd = false,
+		respect_buf_cwd = true,
 		select_prompts = false,
 		sort = {
 			sorter = "name",
@@ -263,7 +263,7 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 		local keymap = vim.keymap
 		keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", {})
-		keymap.set("n", "<leader>ee", "<cmd>NvimTreeFindFile<CR>", {})
+		keymap.set("n", "<leader>i", "<cmd>NvimTreeFindFile<CR>", {})
 		require("nvim-tree").setup(opts)
 	end,
 }
