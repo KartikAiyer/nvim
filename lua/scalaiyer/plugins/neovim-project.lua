@@ -15,8 +15,7 @@ return {
     nvimproject.setup({
       projects = { -- define project roots
         "~/fun/*",
-        "~/fun/kt/src/embedded/hubble/hubl_rtos/",
-        "~/fun/kt/src/embedded/hubble/sdk/rtos",
+        "~/fun/kt/src/embedded/hubble",
         "~/.config/*",
         "~/.local/share/nvim",
         "~/.local/state/nvim",
@@ -31,16 +30,13 @@ return {
       group = vim.api.nvim_create_augroup("ProjectLoader", { clear = true }),
       callback = function()
         local cwd = vim.fn.getcwd()
-        print("cwd " .. vim.fn.getcwd())
-        local projectFile = "project.lua"
-        local projectFile = io.open(cwd .. "/" .. projectFile)
+        local projectFileName = "project.lua"
+        local projectFile = io.open(cwd .. "/" .. projectFileName)
         if projectFile then
           package.path = cwd .. "/?.lua;" .. package.path
-          print(package.path)
           local module = require("project")
           module.init()
-        else 
-          print("No Project file found")
+        else
           return
         end
       end
