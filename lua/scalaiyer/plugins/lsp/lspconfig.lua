@@ -51,6 +51,9 @@ return {
 
       opts.desc = "Restart Language Server"
       keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)
+
+      opts.desc = "Format buffer"
+      keymap.set("n", "<leader><leader>f", vim.lsp.buf.format, opts)
     end
     -- Used to enable auto copletion
     local capabilities = cmp_nvim_lsp.default_capabilities()

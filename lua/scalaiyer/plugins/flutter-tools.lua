@@ -49,6 +49,9 @@ return {
 
       opts.desc = "Restart Language Server"
       keymap.set("n", "<leader>rs", "<cmd>LspRestart<CR>", opts)
+
+      opts.desc = "Format buffer"
+      keymap.set("n", "<leader><leader>f", vim.lsp.buf.format, opts)
     end
 
     require("flutter-tools").setup {

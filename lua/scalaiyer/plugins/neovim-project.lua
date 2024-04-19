@@ -20,6 +20,7 @@ return {
         "~/.local/share/nvim",
         "~/.local/state/nvim",
         "~/.local/share/nvim/lazy/*",
+        "~/fun/motive_aosp/src/vg5/services/DriverMonitor/tradefedhost/test_prep_tool",
       },
       dashboard_mode = true,
     })
