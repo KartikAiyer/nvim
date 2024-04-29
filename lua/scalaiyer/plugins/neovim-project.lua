@@ -31,8 +31,13 @@ return {
       group = vim.api.nvim_create_augroup("ProjectLoader", { clear = true }),
       callback = function()
         local cwd = vim.fn.getcwd()
+        local nvimRc = ".nvim.lua"
         local projectFileName = "project.lua"
         local projectFile = io.open(cwd .. "/" .. projectFileName)
+        local nvimRcFile = io.open(cwd .. "/" .. nvimRc)
+        if nvimRcFile then
+          dofile(cwd .. "/" .. nvimRc)
+        end
         if projectFile then
           package.path = cwd .. "/?.lua;" .. package.path
           local module = require("project")
