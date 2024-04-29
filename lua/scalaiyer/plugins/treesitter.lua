@@ -28,7 +28,7 @@ return {
       highlight = {
         enable = true,
       },
-      indent = { 
+      indent = {
         enable = true,
       },
       incremental_selection = {

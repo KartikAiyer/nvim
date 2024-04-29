@@ -7,7 +7,7 @@ return {
   },
   config = function()
     local keymap = vim.keymap
-    local opts = {noremap = true, silent = true}
+    local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
@@ -71,7 +71,27 @@ return {
           background = true,
         },
         on_attach = on_attach,
-      }
+      },
+      debugger = {           -- integrate with nvim dap + install dart code debugger
+        enabled = true,
+        run_via_dap = false, -- use dap instead of a plenary job to run flutter apps
+        -- if empty dap will not stop on any exceptions, otherwise it will stop on those specified
+        -- see |:help dap.set_exception_breakpoints()| for more info
+        exception_breakpoints = {
+          "uncaught",
+          "raised",
+        },
+        register_configurations = function(paths)
+          require("dap").configurations.dart = {
+         --   {
+         --     name = "Launch dart",
+         --     request = "launch",
+         --     type = "dart"
+         --   }
+          }
+          require("dap.ext.vscode").load_launchjs()
+        end,
+      },
     }
   end,
 }

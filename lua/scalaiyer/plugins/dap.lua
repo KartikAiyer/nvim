@@ -62,5 +62,6 @@ return {
     vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", {desc = "Continue Dap. Specify executable if not started"})
     vim.keymap.set("n", "<leader>do", "<cmd>DapStepOver<CR>", {desc = "Dap Step Over"})
     vim.keymap.set("n", "<leader>di", "<cmd>DapStepInto<CR>", {desc = "Dap Step Into"})
+    vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", {desc = "Dap Toggle Breakpoint"})
   end
 }
