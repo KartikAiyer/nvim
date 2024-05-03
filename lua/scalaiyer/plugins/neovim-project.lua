@@ -15,12 +15,13 @@ return {
     nvimproject.setup({
       projects = { -- define project roots
         "~/fun/*",
-        "~/fun/kt/src/embedded/hubble",
+        "~/code/*",
+        "~/code/kt/src/embedded/hubble",
         "~/.config/*",
         "~/.local/share/nvim",
         "~/.local/state/nvim",
         "~/.local/share/nvim/lazy/*",
-        "~/fun/motive_aosp/src/vg5/services/DriverMonitor/tradefedhost/test_prep_tool",
+        "~/code/motive_aosp/src/vg5/services/DriverMonitor/tradefedhost/test_prep_tool",
       },
       dashboard_mode = true,
     })
