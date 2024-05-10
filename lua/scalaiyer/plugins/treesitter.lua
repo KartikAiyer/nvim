@@ -24,6 +24,7 @@ return {
         "dockerfile",
         "doxygen",
         "bash",
+        "python"
       },
       highlight = {
         enable = true,
