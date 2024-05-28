@@ -45,6 +45,9 @@ function LspConfigOnAttach(_, bufnr)
   opts.desc = "Show LSP type definitions"
   keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
+  opts.desc = "Show LSP symbols in workspace"
+  keymap.set("n", "gs", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
+
   opts.desc = "See available code actions"
   keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 
