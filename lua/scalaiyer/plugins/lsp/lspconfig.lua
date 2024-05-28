@@ -222,6 +222,7 @@ return {
     "nvimtools/none-ls.nvim",
     "rcarriga/nvim-dap-ui",
     "mfussenegger/nvim-dap",
+    "mfussenegger/nvim-dap-python",
     "nvim-neotest/nvim-nio",
     {
       "theHamsta/nvim-dap-virtual-text",
