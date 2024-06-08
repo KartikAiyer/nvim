@@ -183,6 +183,7 @@ local function configDap()
     ensure_installed = { 'python', 'kotlin' }
   })
   local dap = require "dap"
+  local dapui = require "dapui"
 
   dap.adapters.lldb = {
     type = "executable",
@@ -209,6 +210,31 @@ local function configDap()
   dap.configurations.cpp = {
     lldb
   }
+
+  local dapPython = require('dap-python')
+  dapPython.setup("python")
+  dapPython.test_runner = 'pytest'
+
+  dapui.setup()
+  dap.listeners.before.attach.dapui_config = function()
+    dapui.open()
+  end
+
+  dap.listeners.before.launch.dapui_config = function()
+    dapui.open()
+  end
+
+  dap.listeners.before.event_terminated.dapui_config = function()
+    dapui.close()
+  end
+
+  dap.listeners.before.event_closed.dapui_config = function()
+    dapui.close()
+  end
+  vim.keymap.set("n", "<leader>dc", "<cmd>DapContinue<CR>", {desc = "Continue Dap. Specify Exceutable if not started"})
+  vim.keymap.set("n", "<leader>do", "<cmd>DapStepOver<CR>", {desc = "Dap Step Over"})
+  vim.keymap.set("n", "<leader>di", "<cmd>DapStepInto<CR>", {desc = "Dap Step Into"})
+  vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", {desc = "Dap Toggle Breakpoint"})
 end
 return {
   "neovim/nvim-lspconfig",
@@ -220,7 +246,9 @@ return {
     "jay-babu/mason-null-ls.nvim",
     "jay-babu/mason-nvim-dap.nvim",
     "nvimtools/none-ls.nvim",
-    "rcarriga/nvim-dap-ui",
+    {
+      "rcarriga/nvim-dap-ui",
+    },
     "mfussenegger/nvim-dap",
     "mfussenegger/nvim-dap-python",
     "nvim-neotest/nvim-nio",
