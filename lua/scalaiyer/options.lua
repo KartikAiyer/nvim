@@ -41,5 +41,7 @@ vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
+vim.opt.conceallevel = 2
+
 -- This keymapping will clear a search highlight
 vim.keymap.set("n", "<leader><leader>j", "<cmd>nohlsearch<CR>", {desc = "Clear search highlights"});

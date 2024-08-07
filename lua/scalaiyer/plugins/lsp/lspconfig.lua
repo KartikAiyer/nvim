@@ -105,6 +105,10 @@ local function configLspConfig()
       },
     },
   })
+  lspconfig["cmake"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+  })
 
   lspconfig["terraformls"].setup({
     capabilities = capabilities,
