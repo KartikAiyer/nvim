@@ -3,7 +3,7 @@ vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
-vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
+vim.opt.conceallevel = 2 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
@@ -33,6 +33,8 @@ vim.opt.wrap = false -- display lines as one long line
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+vim.opt.wrap=true
+vim.opt.linebreak=true
 
 vim.opt.shortmess:append("c")
 vim.opt.exrc = true
@@ -40,8 +42,6 @@ vim.opt.exrc = true
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
-
-vim.opt.conceallevel = 2
 
 -- This keymapping will clear a search highlight
 vim.keymap.set("n", "<leader><leader>j", "<cmd>nohlsearch<CR>", {desc = "Clear search highlights"});
