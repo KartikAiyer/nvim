@@ -23,6 +23,7 @@ return {
         "~/.local/share/nvim/lazy/*",
         "~/code/motive_aosp/src/vg5/services/DriverMonitor/tradefedhost/test_prep_tool",
         "~/code/motive_aosp/src/vg5/services/DriverMonitor/tradefedhost/fbtPy",
+        "~/Documents/vaults/*"
        -- "/home/kartik/.cache/pypoetry/virtualenvs/fbtpy-qbIun9tm-py3.10/lib/python3.10/site-packages/TermTk"
       },
       dashboard_mode = true,
