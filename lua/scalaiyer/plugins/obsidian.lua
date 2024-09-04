@@ -36,6 +36,11 @@ return {
         min_chars = 2,
     },
     log_level = vim.log.levels.INFO,
+    templates = {
+      folder = "templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+    },
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
       ["gf"] = {
