@@ -15,6 +15,7 @@ return {
     nvimproject.setup({
       projects = { -- define project roots
         "~/fun/*",
+        "~/fun/nvim_plugins/*",
         "~/code/*",
         "~/code/kt/src/embedded/hubble",
         "~/.config/*",

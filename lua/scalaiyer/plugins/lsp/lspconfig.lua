@@ -97,9 +97,11 @@ local function configLspConfig()
         },
         workspace = {
           -- make language server aware of runtime files
-          libarary = {
+          library = {
             [vim.fn.expand("$VIMRUNTIME/lua")] = true,
             [vim.fn.stdpath("config") .. "/lua"] = true,
+            [vim.fn.stdpath("config") .. "/lua/plugins"] = true,
+            [vim.fn.stdpath("data") .. "/lazy/plenary.nvim/lua"] = true,
           },
         },
       },
