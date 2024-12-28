@@ -211,7 +211,7 @@ local function configDap()
 
   dap.adapters.lldb = {
     type = "executable",
-    command = "lldb-vscode",
+    command = "lldb-dap",
     name = "lldb",
   }
 
@@ -259,6 +259,7 @@ local function configDap()
   vim.keymap.set("n", "<leader>do", "<cmd>DapStepOver<CR>", {desc = "Dap Step Over"})
   vim.keymap.set("n", "<leader>di", "<cmd>DapStepInto<CR>", {desc = "Dap Step Into"})
   vim.keymap.set("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", {desc = "Dap Toggle Breakpoint"})
+  vim.keymap.set("n", "<leader>dq", "<cmd>DapDisconnect<CR>", {desc = "Dap Disconnect"})
 end
 return {
   "neovim/nvim-lspconfig",
