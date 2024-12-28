@@ -19,13 +19,17 @@ return {
 						["<A-k>"] = actions.move_selection_previous, -- move to the previous selection
 						["<A-j>"] = actions.move_selection_next,
 						["<A-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<A-Q>"] = actions.send_to_qflist + actions.open_qflist,
             ["fg"] = actions.close,
+            ["<tab>"] = actions.toggle_selection,
           },
 					n = {
 						["<A-k>"] = actions.move_selection_previous, -- move to the previous selection
 						["<A-j>"] = actions.move_selection_next,
 						["<A-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<A-Q>"] = actions.send_to_qflist + actions.open_qflist,
             ["fg"] = actions.close,
+            ["<tab>"] = actions.toggle_selection,
 					},
 				},
 			},
