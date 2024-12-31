@@ -4,9 +4,9 @@
   opts = {
     cmake_build_directory = "build/${variant:buildType}",
   },
-   config = function(_, opts) 
+   config = function()
      local cmake = require "cmake-tools"
-     cmake.setup(opts)
+     cmake.setup{}
      vim.keymap.set("n", "<leader>cg", "<cmd>CMakeGenerate<CR>", {desc = "Generate Cmake project"})
      vim.keymap.set("n", "<leader>ccp", "<cmd>CMakeSelectConfigurePreset<CR>", {desc = "Select Cmake configure preset"})
      vim.keymap.set("n", "<leader>cbp", "<cmd>CMakeSelectBuildPreset<CR>", {desc = "Select Cmake build preset"})
