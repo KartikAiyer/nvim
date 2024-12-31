@@ -191,7 +191,6 @@ return {
   config = function(_, opts)
 		local keymap = vim.keymap
 		keymap.set("n", "<leader>o", ":Oil<cr>", {})
-		keymap.set("n", "<leader>l", "<cmd>NvimTreeFindFile<CR>", {})
     require('oil').setup(opts)
   end
 }
