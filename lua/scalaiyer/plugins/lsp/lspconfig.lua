@@ -21,7 +21,8 @@ local function configMasonLspConfig()
       "kotlin_language_server",
       "gradle_ls",
       "jsonls",
-      "yamlls"
+      "yamlls",
+      "ansiblels",
     },
     automatic_installation = true,
   })
@@ -182,7 +183,8 @@ local function configMasonNullLs()
       "stylua",
       "dictionary",
       "printenv",
-      "pylint"
+      "pylint",
+      "ansiblelint"
     },
     methods = {
       diagnostics = true,

@@ -15,9 +15,6 @@ require("lazy").setup({
   spec = {
     { import = "scalaiyer.plugins" },
     { import = "scalaiyer.plugins.lsp" },
-    { "androidsdk.nvim",
-      dev = true,
-    },
   },
   dev = {
     path = "~/fun/nvim_plugins",
