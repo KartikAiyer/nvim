@@ -109,7 +109,7 @@ local function configLspConfig()
         workspace = {
           checkThirdParty = false,
           library = {
-            vim.env.VIMRUNTIME
+            vim.env.VIMRUNTIME,
             -- Depending on the usage, you might want to add additional paths here.
             -- "${3rd}/luv/library"
             -- "${3rd}/busted/library",
