@@ -23,6 +23,7 @@ local function configMasonLspConfig()
       "jsonls",
       "yamlls",
       "ansiblels",
+      "sqlls",
     },
     automatic_installation = true,
   })
@@ -147,6 +148,10 @@ local function configLspConfig()
     capabilities = capabilities,
     on_attach = on_attach
   })
+  lspconfig["sqlls"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach
+  })
 end
 
 -- Also configures null-ls
@@ -184,7 +189,8 @@ local function configMasonNullLs()
       "dictionary",
       "printenv",
       "pylint",
-      "ansiblelint"
+      "ansiblelint",
+      "sql-formatter",
     },
     methods = {
       diagnostics = true,
@@ -197,7 +203,7 @@ local function configMasonNullLs()
     handlers = {
       refactoring = function(source_name, methods)
         null_ls.register(null_ls.builtins.code_actions.refactoring.with({
-          filetypes = { "go", "javascript", "lua", "python", "typescript", "cpp", "c", "java" }
+          filetypes = { "go", "javascript", "lua", "python", "typescript", "cpp", "c", "java", "sql" }
         }))
       end
     },
