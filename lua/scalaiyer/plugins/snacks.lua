@@ -5,7 +5,7 @@ return {
   opts = {
     notify = { enabled = true },
     notifier = { enabled = true },
-    dashboard = { enabeld = true },
+    dashboard = { enabled = true },
     lazygit = {
       enabled = true,
       configure = true,
